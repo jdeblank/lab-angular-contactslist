@@ -1,0 +1,18 @@
+<accordion class="staff">
+  <accordion-group ng-repeat="staff in stafflist | filter:query | orderBy:ordering">
+    <accordion-heading>{{staff.firstname}} {{staff.lastname}} - <span class="{{staff.extra}}">{{staff.position}}</span></accordion-heading></accordion-group></accordion>
+    <img src="img/profile/{{staff.profile}}.jpg" alt="" class="profile">
+    <img src="img/map.png" alt="" class="map">
+    <p>Email: <a href="mailto:{{staff.email}}">{{staff.email}}</a></p>
+    <p>Phone: {{staff.phone}}</p>
+    <p>Mobile: {{staff.mobile}}</p>
+    <p>Skype: {{staff.skype}}</p>
+    <p>Manager: {{staff.manager}}</p>
+    <p>CO age: {{staff.years}} years</p>
+    <div class="tags">
+      {{staff.tags}}
+    </div>
+  
+  <!--<ul>
+  <li ng-repeat="staff in stafflist | filter:query | orderBy:ordering">{{staff.firstname}} {{staff.lastname}} - <span class="{{staff.extra}}">{{staff.position}}</span></li>
+  </ul>-->
