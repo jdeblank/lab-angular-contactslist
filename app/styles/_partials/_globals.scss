@@ -1,0 +1,12 @@
+$default-transition-duration : 0.5s;
+
+$grey:        #414141;
+$grey_mid:    #4d4d4f;
+$grey_light:  #818286;
+$red:         #d22b00;
+$red_light:   #ba2f46;
+$red_dark:    #a5072a;
+
+@mixin font_PTSans {
+    font-family: 'PT Sans Narrow', sans-serif;
+}

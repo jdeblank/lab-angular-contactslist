@@ -1,0 +1,178 @@
+@import 'compass/css3';
+@import 'normalize.scss/_normalize';
+@import 'susy/sass/susy';
+@import '_partials/globals';
+@import '_partials/typography';
+
+body {
+	background: #000;
+	color: #fff;
+}
+
+.container {
+	@include container;
+	// @include susy-grid-background;
+}
+.navigation {
+	@include span-columns(2);
+	.logo {
+		padding: .8em 0;
+		text-align: center;
+		background: $red;
+	}
+	h1 {
+		@include font_PTSans;
+		font-size: 1em;
+		margin: 0;
+	}
+	li {
+		list-style: none;
+		margin-bottom: 8px;
+		a {
+			@include font_PTSans;
+			@include single-transition();
+			display: block;
+			padding: 0.7em 0;
+			font-size: 1.1em;
+			text-align: center;
+			text-decoration: none;
+			color: #fff;
+			background: $grey;
+			&:hover {
+				background-color: #222;
+			}
+			&[class^="icon-"]:before, 
+			&[class*=" icon-"]:before {
+				font-size: 2.8em;
+			}
+		}
+	}
+}
+
+.stafflist {
+	@include span-columns(6);
+	height: 750px;
+	overflow: auto;
+	margin: 1.5em 0 0;
+	.accordion {
+		margin-right: .5em;
+	}
+	.accordion-group {
+		@include border-box-sizing;
+		@include single-transition();
+		margin-bottom: 0.4em;
+		padding: 0.4em 1em;
+		background: $grey;
+		text-transform: capitalize;
+		&:hover {
+			background: $grey_mid;
+		}
+	}
+	.accordion-heading {
+		@include font_PTSans;
+		font-size: 1.3em;
+		span:last-child {
+			color: shade(#fff, 50);
+			font-size: 0.7em;
+			&[class^="icon-"]:before, 
+			&[class*=" icon-"]:before {
+				float: right;
+				font-size: 1.7em;
+			}
+		}
+	}
+	.accordion-toggle {
+		display: block;
+		cursor: pointer;
+	}
+	.accordion-body {
+		.profile {
+			width: 100%;
+			margin-top: .5em;
+		}
+		.map {
+			float: right;
+		}
+		.tags {
+
+		}
+		p {
+			margin: .2em 0;
+			font-size: .8em;
+			line-height: 1;
+		}
+		a {
+			color: #fff;
+			text-transform: none;
+		}
+		&.collapse {
+			@include single-transition();
+			overflow: hidden;
+		}
+	}
+}
+
+.sidebar {
+	@include span-columns(4 omega);
+	margin-top: 1.5em;
+	.search {
+		background: $red;
+		span[class^="icon-"] {
+			@include box-sizing(border-box);
+			width: 10%;
+			padding: .4em 0 .4em .4em;
+			border: 0;
+			font-size: 1.3em;
+			color: #fff;
+		}
+		button {
+			border: 0;
+			background: none;
+			font-size: 1.3em;
+			color: #fff;
+		}
+	}
+	.search_input {
+		@include box-sizing(border-box);
+		@include font_PTSans;
+		width: 70%;
+		padding: 0.4em 0;
+		border: 0;
+		font-size: 1.3em;
+		color: #fff;
+		background: none;
+		&::-webkit-input-placeholder {
+		   color: #fff;
+		}
+		&:focus {
+			outline: none;
+		}
+	}
+	.sort {
+		@include font_PTSans;
+		margin: .5em 0;
+		padding: .5em 1em;
+		background: $grey_mid;
+		font-size: 1.1em;
+		select {
+			margin: 0 0 0 .7em;
+			border: 0;
+			background: $grey_light;
+			color: #fff;
+		}
+	}
+}
+
+::-webkit-scrollbar {
+    width: 1em;
+}
+ 
+::-webkit-scrollbar-track {
+    background-color: $grey_light;
+    padding: 0 2px;
+}
+ 
+::-webkit-scrollbar-thumb {
+    background-color: $grey;
+    width: 10px;
+}
